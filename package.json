@@ -15,6 +15,7 @@
     "react-owl-carousel": "^2.3.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
+    "react-tabs": "^3.1.0",
     "reactstrap": "^8.4.1"
   },
   "scripts": {

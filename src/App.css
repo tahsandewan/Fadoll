@@ -14,3 +14,17 @@
 .not-allowed {
   cursor: not-allowed;
 }
+.left {
+  width: 35%;
+  float: left;
+}
+
+.right {
+  width: 65%;
+  float: right;
+}
+.tabname {
+  border: 1px solid #e2e1dd;
+  padding: 5px 20px 32px;
+  width: 70%;
+}

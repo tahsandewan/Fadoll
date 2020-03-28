@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: gray;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+ul.topnav li {
+  float: left;
+  width: 10.6666%;
+  height: 45px;
+  border-left: 1px solid #949292;
+}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 7px 1px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+ul.topnav li a.active {
+  background-color: #4caf50;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {
+    float: none;
+  }
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnavv {
+  overflow: hidden;
+  background-color: rgb(220, 224, 228);
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 55px;
+}
+
+.topnavv a {
+  float: left;
+  color: purple;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 27px;
+  margin-top: -7px;
+}
+button {
+  height: 40px;
+  width: 100px;
+}
+
+.topnavv a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnavv a.active {
+  background-color: gray;
+  color: purple;
+}
+
+input[type="text"] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  margin-top: 2px;
+}
+
+input[type="text"]:focus {
+  width: 50%;
+}

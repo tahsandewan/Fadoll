@@ -1,0 +1,16 @@
+.owl-carousel {
+  width: 80% !important;
+  height: 300px !important;
+  margin: auto;
+}
+.owl-carousel .owl-item img {
+  height: 400px;
+}
+
+.fa {
+  font-size: 25px;
+  padding-top: 7px;
+}
+.not-allowed {
+  cursor: not-allowed;
+}

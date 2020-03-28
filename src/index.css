@@ -1,0 +1,50 @@
+.navbarTop {
+
+  overflow: hidden;
+  background-color:SlateGray  ;
+  /* line-height: 15px;  */
+  height: 30px;
+  margin-top: -8px;
+ 
+  width: 100%;
+}
+.navbarTop a {
+  
+ float: right;
+ margin-right: 40px;
+
+
+}
+.navbarTop p {
+  margin-top: 10px;
+  float: left;
+  margin-left: 40px;
+  inline-size: 3
+  
+ }
+.notification {  
+  color: white;
+  text-decoration: none;
+  padding: 5px 6px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 13px;
+ 
+  top: 5px;
+  
+}
+element.style {
+  margin-right: 2px;
+}
+.notification:hover {
+  background: rgb(190, 197, 228);
+}
+body{
+margin: 0;
+}
+
+p{
+  text-align: justify;
+  padding: 20px;
+}

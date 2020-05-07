@@ -11,7 +11,7 @@ import {
   Button,
   ListGroup,
   ListGroupItem,
-  Badge
+  Badge,
 } from "reactstrap";
 import axios from "axios";
 import AddIcon from "@material-ui/icons/Add";
@@ -31,7 +31,7 @@ class Men extends Component {
       .get(
         "https://gist.githubusercontent.com/tahsandewan/af856c387bab33bc386160dbd54d0f4e/raw/79b40f44a78e68f9b3aeb2243003bf394d101f5e/products.json"
       )
-      .then(res => {
+      .then((res) => {
         this.setState({ products: res.data, loading: false });
       });
   }
@@ -40,14 +40,14 @@ class Men extends Component {
     loading: true,
     products: [],
     page: 1,
-    cart: []
+    cart: [],
   };
 
   componentDidUpdate() {
     localStorage.setItem("cart", JSON.stringify(this.state.cart));
   }
 
-  addToCart = product => {
+  addToCart = (product) => {
     // {
     //     product,
     //     quantity
@@ -58,7 +58,8 @@ class Men extends Component {
     let productExists = false;
 
     // 2. check if the product already in the cart array
-    productExists = cart.filter(item => item.product.id === product.id).length;
+    productExists = cart.filter((item) => item.product.id === product.id)
+      .length;
     // 3. jodi cart array te thake tahole amra just quantity increment korbo
     if (!productExists) {
       cart.push({ product, quantity: 1 });
@@ -68,7 +69,7 @@ class Men extends Component {
     this.setState({ cart: cart });
   };
 
-  addition = product => {
+  addition = (product) => {
     // {
     //     product,
     //     quantity
@@ -82,7 +83,7 @@ class Men extends Component {
     // productExists = cart.filter(item => item.product.id === product.id).length;
     // // 3. jodi cart array te thake tahole amra just quantity increment korbo
     // if (productExists) {
-    let productIndex = cart.findIndex(item => item.product.id === product.id);
+    let productIndex = cart.findIndex((item) => item.product.id === product.id);
     cart[productIndex].quantity++;
     // }
     // 4. otherwise amra prodeuct add korbo and quantity: 1
@@ -93,24 +94,25 @@ class Men extends Component {
     this.setState({ cart: cart });
   };
 
-  subtraction = product => {
+  subtraction = (product) => {
     // 1. copy the cart array
     let cart = this.state.cart;
     let productExists = false;
 
     // 2. check if the product already in the cart array
-    productExists = cart.filter(item => item.product.id === product.id).length;
+    productExists = cart.filter((item) => item.product.id === product.id)
+      .length;
     // 3. jodi cart array te thake tahole amra just quantity increment korbo
 
-    let productIndex = cart.findIndex(item => item.product.id === product.id);
+    let productIndex = cart.findIndex((item) => item.product.id === product.id);
     cart[productIndex].quantity--;
 
     this.setState({ cart: cart });
   };
 
-  removeFromCart = id => {
+  removeFromCart = (id) => {
     let cart = this.state.cart;
-    let updatedCart = cart.filter(item => item.product.id !== id);
+    let updatedCart = cart.filter((item) => item.product.id !== id);
     this.setState({ cart: updatedCart });
   };
 
@@ -130,7 +132,7 @@ class Men extends Component {
               <Row>
                 {this.state.products
                   .slice(skip, PerPage + skip)
-                  .map(product => (
+                  .map((product) => (
                     <Col md="4" key={product.id}>
                       <Card className="mb-3">
                         <CardImg
@@ -159,8 +161,9 @@ class Men extends Component {
                   <nav aria-label="Page navigation example">
                     <ul class="pagination">
                       <li
-                        class={`page-item ${this.state.page == 1 &&
-                          "disabled"}`}
+                        class={`page-item ${
+                          this.state.page == 1 && "disabled"
+                        }`}
                       >
                         <a
                           class="page-link"
@@ -188,8 +191,9 @@ class Men extends Component {
                         </li>
                       ))}
                       <li
-                        class={`page-item ${this.state.page == pages &&
-                          "disabled"}`}
+                        class={`page-item ${
+                          this.state.page == pages && "disabled"
+                        }`}
                       >
                         <a
                           class="page-link"
@@ -209,7 +213,7 @@ class Men extends Component {
             <Col md="4">
               <h2>Cart</h2>
               <ListGroup>
-                {this.state.cart.map(cart => (
+                {this.state.cart.map((cart) => (
                   <ListGroupItem className="dflex align-items-center d-flex">
                     ({cart.product.name})
                     {cart.quantity > 1 && (

@@ -14,16 +14,35 @@ import {
   MagnifierContainer,
   PictureInPictureMagnifier,
   MOUSE_ACTIVATION,
-  TOUCH_ACTIVATION
+  TOUCH_ACTIVATION,
 } from "react-image-magnifiers";
 
 class Details extends Component {
-  state = {
-    loading: true,
-    products: [],
-    cart: []
-    // id: null
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      id: 1,
+      loading: true,
+      products: [],
+      cart: [],
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    const element_id = event.target.id;
+    this.setState({ id: element_id }, () => console.log(this.state.id));
+
+    //console.log(this.state.id);
+  }
+  // state = {
+  //   loading: true,
+  //   products: [],
+  //   cart: [],
+  //   id: 1,
+  // };
   componentDidMount() {
     const passed_id = this.props.location.state.element_id;
 
@@ -33,7 +52,7 @@ class Details extends Component {
         "https://cors-anywhere.herokuapp.com/https://jahidweb7.herokuapp.com/products/" +
           passed_id
       )
-      .then(res => {
+      .then((res) => {
         this.setState({ products: res.data, loading: false });
       });
 
@@ -56,12 +75,12 @@ class Details extends Component {
   //   this.handleClick = this.handleClick.bind(this);
   // }
 
-  handleClick(event) {
-    const element_id = event.target.id;
-    // this.setState({ id: element_id }, () => console.log(this.state.id));
+  // handleClick(event) {
+  //   const element_id = event.target.id;
+  //   this.setState({ id: element_id }, () => console.log(this.state.id));
 
-    //console.log(this.state.id);
-  }
+  //   //console.log(this.state.id);
+  // }
   render() {
     return (
       <div>
